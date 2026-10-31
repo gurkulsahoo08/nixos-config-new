@@ -11,7 +11,7 @@
 	programs.git.enable = true;
 	programs.git.settings.user.name = "Gurkul Sahoo";
 	programs.git.settings.user.email = "gurkulsahoo47@gmail.com";
-	programs.gpaste.enable = true;
+	
 	# Tmux
 	programs.tmux = {
 		enable = true;
