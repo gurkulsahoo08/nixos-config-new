@@ -104,6 +104,20 @@
 	gnome-maps
 	gnome-contacts
 	epiphany
+	gnome-console
+	gnome-connections
+	gnome-logs
+	gnome-boxes
+	gnome-terminal
+	gnome-usage
+	gnome-weather
+	gnome-software
+	gnome-calculator
+	gnome-font-viewer
+	gnome-disk-utility
+	seahorse
+	gnome-online-accounts
+	gnome-yelp
 ];
   services.speechd.enable = false;
 

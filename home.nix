@@ -9,6 +9,8 @@
 
 	programs.fish.enable = true;
 	programs.git.enable = true;
+	programs.git.settings.user.name = "Gurkul Sahoo";
+	programs.git.settings.user.email = "gurkulsahoo47@gmail.com";
 
 	# Tmux
 	programs.tmux = {
@@ -74,6 +76,7 @@
 		wl-clipboard
 		gpaste
 		hugo
+		gnome-tweaks
 ];
 
 
