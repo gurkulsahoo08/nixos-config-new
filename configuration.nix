@@ -117,7 +117,7 @@
 	gnome-disk-utility
 	seahorse
 	gnome-online-accounts
-	gnome-yelp
+	yelp
 ];
   services.speechd.enable = false;
 
