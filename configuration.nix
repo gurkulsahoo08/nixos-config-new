@@ -118,6 +118,9 @@
 	seahorse
 	gnome-online-accounts
 	yelp
+	gnome-system-monitor
+	gnome-calendar
+	baobab
 ];
   services.speechd.enable = false;
 
