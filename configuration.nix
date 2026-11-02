@@ -85,13 +85,27 @@
      ];
    };
 
-  programs.firefox.enable = true;
+  programs.firefox = {
+
+    enable = true;
+    policies = {
+    Proxy = {
+      Mode = "manual";
+      HTTPProxy = "127.0.0.1:8080";
+      SSLProxy = "127.0.0.1:8080";
+      NoProxiesFor = "cdn.myanimelist.net, .cdn.myanimelist.net";
+      UseProxyForDNS = true;
+      Locked = true;
+    };
+  };
+
+};
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     
+     spoofdpi
    ];
 
   # Hardware accn
@@ -127,6 +141,21 @@
 ];
   services.speechd.enable = false;
 
+  # Spoofdpi
+ systemd.user.services.spoofdpi = {
+  description = "Simple and fast anti-censorship proxy tool";
+  after = [ "network.target" ];
+  wantedBy = [ "graphical-session.target" ];
+  
+  serviceConfig = {
+    # This calls the binary directly from the Nix store
+    ExecStart = "${pkgs.spoofdpi}/bin/spoofdpi";
+    Restart = "on-failure";
+    RestartSec = 3;
+    StartLimitBurst = 10;
+    StartLimitIntervalSec = 60;
+  };
+};
 
   # Clean up
   nix.gc = {
